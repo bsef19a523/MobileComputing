@@ -25,4 +25,8 @@ public class Results extends AppCompatActivity {
         Intent intent = new Intent(Results.this, QuizView.class);
         startActivity(intent);
     }
+
+
+
+    //akjdkasjdkljaskldjklj
 }
