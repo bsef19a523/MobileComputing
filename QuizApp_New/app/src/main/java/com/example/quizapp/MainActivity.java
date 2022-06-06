@@ -20,4 +20,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, QuizView.class);
         startActivity(intent);
     }
+
+    public void Learn(View view) {
+        Intent intent = new Intent(MainActivity.this, Learn.class);
+        startActivity(intent);
+    }
 }
