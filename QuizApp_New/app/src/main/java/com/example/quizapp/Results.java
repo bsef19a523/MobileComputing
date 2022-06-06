@@ -16,7 +16,6 @@ public class Results extends AppCompatActivity {
         textView = findViewById(R.id.textView3);
         Intent intent = getIntent();
         int score = QuizView.getScore();
-
         String s=String.valueOf(score);
         textView.setText(s);
     }
