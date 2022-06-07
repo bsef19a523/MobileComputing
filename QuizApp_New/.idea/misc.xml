@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/University/6th Semester/Mobile Computing/MobileComputing/QuizApp_New/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3485" />
+        <entry key="..\:/University/6th Semester/Mobile Computing/MobileComputing/QuizApp_New/app/src/main/res/layout/activity_learn.xml" value="0.36666666666666664" />
         <entry key="..\:/University/6th Semester/Mobile Computing/MobileComputing/QuizApp_New/app/src/main/res/layout/activity_main.xml" value="0.259375" />
+        <entry key="..\:/University/6th Semester/Mobile Computing/MobileComputing/QuizApp_New/app/src/main/res/layout/activity_quiz_view.xml" value="0.36666666666666664" />
+        <entry key="..\:/University/6th Semester/Mobile Computing/MobileComputing/QuizApp_New/app/src/main/res/layout/activity_results.xml" value="0.36666666666666664" />
         <entry key="..\:/University/6th Semester/Mobile Computing/Practice/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/University/6th Semester/Mobile Computing/Practice/QuizApp/app/src/main/res/layout/activity_quiz_view.xml" value="0.358695652173913" />
         <entry key="..\:/University/6th Semester/Mobile Computing/Practice/QuizApp/app/src/main/res/layout/activity_results.xml" value="0.36666666666666664" />
