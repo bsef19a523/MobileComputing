@@ -26,7 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        
+
         String createTableSTatement = "CREATE TABLE " + STUDENT_TABLE + "(" +
                 STUDENT_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + STUDENT_NAME + " Text, "
                 + STUDENT_ROLL + " Int, " + STUDENT_ENROLL + " BOOL) ";
@@ -50,10 +50,7 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
         db.insert(STUDENT_TABLE, null, cv);
         db.close();
-        //NullCoumnHack
-        //long insert =
-        //if (insert == -1) { return false; }
-        //else{return true;}
+
     }
 
     public ArrayList<StudentModel> getAllStudents() {
