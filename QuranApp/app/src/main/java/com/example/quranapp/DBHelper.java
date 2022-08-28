@@ -61,7 +61,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         ArrayList<StudentModel> studentArrayList = new ArrayList<>();
 
-        // moving our cursor to first position.
+       
         if (cursorCourses.moveToFirst()) {
             do {
 
