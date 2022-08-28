@@ -61,7 +61,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         ArrayList<StudentModel> studentArrayList = new ArrayList<>();
 
-       
+
         if (cursorCourses.moveToFirst()) {
             do {
 
@@ -76,13 +76,5 @@ public class DBHelper extends SQLiteOpenHelper {
         return studentArrayList;
     }
 
-    public boolean updateData(StudentModel STUDENTModel) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(STUDENT_NAME, STUDENTModel.getName());
-        contentValues.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
-        db.update(STUDENT_TABLE, contentValues, STUDENT_ID, new String[] {STUDENT_ID});
-        return true;
-    }
 
 }
