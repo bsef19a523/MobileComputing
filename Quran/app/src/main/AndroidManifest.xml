@@ -10,13 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavigationDrawer">
         <activity
-            android:name=".Recycle"
+            android:name=".TranslatedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TranslationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SurahActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
-        <activity android:name=".BookActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
