@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:layout_marginRight="5dp"
-        android:fontFamily="@font/noorehuda"
+        android:fontFamily=""
         android:gravity="center"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
