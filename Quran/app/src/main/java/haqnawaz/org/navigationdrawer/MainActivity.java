@@ -72,10 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case R.id.nav_chrome_reader :
-                        Toast.makeText(getApplicationContext(),"Chrome Reader is clicked",Toast.LENGTH_LONG).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
+
                 }
 
                 return true;
