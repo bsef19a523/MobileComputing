@@ -21,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     public DBHelper(@Nullable Context context) {
-        super(context, "Quran.db", null, 1);
+        super(context, "data.sqlite", null, 1);
     }
 
     @Override
