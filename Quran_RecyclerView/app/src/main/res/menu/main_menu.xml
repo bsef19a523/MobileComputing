@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/book"
+            android:title="Search" />
+
+
+    </group>
+    <item android:title="Translation">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_urdu"
+                    android:icon="@drawable/chrome_reader"
+                    android:title="Urdu" />
+                <item
+                    android:id="@+id/nav_english"
+                    android:icon="@drawable/read_more"
+                    android:title="English" />
+            </group>
+        </menu>
+    </item>
+
+
+</menu>
