@@ -1,4 +1,4 @@
-package haqnawaz.org.navigationdrawer;
+package com.example.quranapp;
 
 import android.content.Context;
 import android.util.Log;

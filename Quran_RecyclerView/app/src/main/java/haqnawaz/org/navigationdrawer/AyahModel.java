@@ -1,4 +1,4 @@
-package haqnawaz.org.navigationdrawer;
+package com.example.quranapp;
 
 public class AyahModel {
     private int SurahID;

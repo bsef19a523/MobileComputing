@@ -5,20 +5,22 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class SurahActivity extends AppCompatActivity {
-    ListView surahListView;
+public class RecyclerActivity2 extends AppCompatActivity {
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    RecyclerView.Adapter adapter;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
@@ -28,7 +30,8 @@ public class SurahActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_surah);
+        setContentView(R.layout.activity_recycler2);
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -46,32 +49,32 @@ public class SurahActivity extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.nav_search:
-                        intent = new Intent(SurahActivity.this, SearchActivity.class);
+                        intent = new Intent(RecyclerActivity2.this, RecyclerSearchActivity.class);
                         startActivity(intent);
                         break;
 
 
                     case R.id.urdu_translation1:
-                        intent = new Intent(SurahActivity.this,TranslationActivity.class);
+                        intent = new Intent(RecyclerActivity2.this,TranslationActivity.class);
                         intent.putExtra("Language","urdu");
                         intent.putExtra("Version","Fateh Muhammad Jalandhri");
                         startActivity(intent);
                         break;
                     case R.id.urdu_translation2:
-                        intent = new Intent(SurahActivity.this,TranslationActivity.class);
+                        intent = new Intent(RecyclerActivity2.this,TranslationActivity.class);
                         intent.putExtra("Language","urdu");
                         intent.putExtra("Version","Mehmood ul Hassan");
                         startActivity(intent);
                         break;
 
                     case R.id.english_translation1:
-                        intent = new Intent(SurahActivity.this,TranslationActivity.class);
+                        intent = new Intent(RecyclerActivity2.this,TranslationActivity.class);
                         intent.putExtra("Language","english");
                         intent.putExtra("Version","Dr Mohsin Khan");
                         startActivity(intent);
                         break;
                     case R.id.english_translation2:
-                        intent = new Intent(SurahActivity.this,TranslationActivity.class);
+                        intent = new Intent(RecyclerActivity2.this,TranslationActivity.class);
                         intent.putExtra("Language","english");
                         intent.putExtra("Version","Mufti Taqi Usmani");
                         startActivity(intent);
@@ -83,12 +86,22 @@ public class SurahActivity extends AppCompatActivity {
             }
         });
 
-        surahListView = findViewById(R.id.SurahListView);
+        QuranArabicText quranObj = new QuranArabicText();
+        String[] quranText=quranObj.QuranArabicText;
         Intent intent = getIntent();
-        String SurahName = intent.getStringExtra("SurahName");
-        DBHelper dbHelper = new DBHelper(SurahActivity.this);
-        ArrayList<String> surahList = dbHelper.getSurah(SurahName);
-        myAdapter adapter = new myAdapter(SurahActivity.this,surahList);
-        surahListView.setAdapter(adapter);
+        int startIndex = intent.getIntExtra("startIndex",0);
+        int endIndex = intent.getIntExtra("endIndex",0);
+
+        ArrayList<String> surah = new ArrayList<String>();
+        for (int i = startIndex-1; i < endIndex-1; i++) {
+            surah.add(quranText[i]);
+        }
+
+        recyclerView = findViewById(R.id.recyclerViewAyah);
+        adapter = new QuranRecyclerAdapter(surah);
+        layoutManager = new LinearLayoutManager(RecyclerActivity2.this,LinearLayoutManager.VERTICAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+
     }
 }
