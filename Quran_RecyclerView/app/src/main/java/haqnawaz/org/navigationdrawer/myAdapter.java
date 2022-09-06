@@ -1,4 +1,4 @@
-package com.example.quranapp;
+package haqnawaz.org.navigationdrawer;
 
 import android.content.Context;
 import android.view.LayoutInflater;

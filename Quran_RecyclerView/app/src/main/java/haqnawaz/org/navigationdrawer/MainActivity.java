@@ -1,4 +1,4 @@
-package com.example.quranapp;
+package haqnawaz.org.navigationdrawer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -40,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
         toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        DBHelper dbHelper =
+                new DBHelper(MainActivity.this);
+        dbHelper.hello();
+        dbHelper.addStudent();
+        Log.d("=====",
+                "onCreate Ayah No "+dbHelper.ayah());
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
             @Override
@@ -53,31 +60,18 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
 
-                    case R.id.urdu_translation1:
+                    case R.id.nav_urdu:
                         intent = new Intent(MainActivity.this,TranslationActivity.class);
                         intent.putExtra("Language","urdu");
-                        intent.putExtra("Version","Fateh Muhammad Jalandhri");
-                        startActivity(intent);
-                        break;
-                    case R.id.urdu_translation2:
-                        intent = new Intent(MainActivity.this,TranslationActivity.class);
-                        intent.putExtra("Language","urdu");
-                        intent.putExtra("Version","Mehmood ul Hassan");
                         startActivity(intent);
                         break;
 
-                    case R.id.english_translation1:
+                    case R.id.nav_english:
                         intent = new Intent(MainActivity.this,TranslationActivity.class);
                         intent.putExtra("Language","english");
-                        intent.putExtra("Version","Dr Mohsin Khan");
                         startActivity(intent);
                         break;
-                    case R.id.english_translation2:
-                        intent = new Intent(MainActivity.this,TranslationActivity.class);
-                        intent.putExtra("Language","english");
-                        intent.putExtra("Version","Mufti Taqi Usmani");
-                        startActivity(intent);
-                        break;
+
 
                 }
 
@@ -96,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+                Log.d("======", "onItemClick: "+ssp.length+" length");
                 int startIndex = ssp[i];
                 int endIndex;
                 if(i+1>=ssp.length)
@@ -113,5 +108,4 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 }
